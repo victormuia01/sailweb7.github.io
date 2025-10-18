@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover SailWeb7's comprehensive web development services - custom websites, e-commerce, SEO, and more.">
+    <title>Our Services - SailWeb7 Web Development Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --primary-light: #64b5f6;
+            --primary-dark: #1565c0;
+            --dark: #0d1b2a;
+            --light: #e3f2fd;
+            --dark-gray: #1b263b;
+            --gray: #415a77;
+            --transition: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            --shadow: 0 5px 15px rgba(0,0,0,0.3);
+            --shadow-hover: 0 15px 30px rgba(0,0,0,0.4);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(13, 27, 42, 0.95);
+            color: var(--light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(30, 136, 229, 0.2);
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            background-color: rgba(13, 27, 42, 0.98);
+            padding: 0.7rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-light);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu:hover {
+            color: var(--primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9) 0%, rgba(30, 136, 229, 0.7) 100%), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--light);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(227, 242, 253, 0.9);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(227, 242, 253, 0.8);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, #233554 100%);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(30, 136, 229, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(30, 136, 229, 0.4);
+        }
+        
+        .service-header {
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(30, 136, 229, 0.2);
+            position: relative;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(30, 136, 229, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-light);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: rgba(30, 136, 229, 0.2);
+            color: var(--primary);
+        }
+        
+        .service-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .service-features {
+            padding: 30px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: rgba(227, 242, 253, 0.9);
+        }
+        
+        .feature-list li i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .service-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            padding: 12px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .service-btn:hover {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(30, 136, 229, 0.4);
+        }
+        
+        /* Process Section */
+        .process-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .process-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+            background: var(--primary-light);
+        }
+        
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .process-step p {
+            color: rgba(227, 242, 253, 0.8);
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9) 0%, rgba(30, 136, 229, 0.7) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: rgba(13, 27, 42, 0.8);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(30, 136, 229, 0.2);
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(30, 136, 229, 0.4);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .benefit-card p {
+            color: rgba(227, 242, 253, 0.9);
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, #233554 100%);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(30, 136, 229, 0.2);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(30, 136, 229, 0.1);
+        }
+        
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--light);
+        }
+        
+        .faq-icon {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition-slow);
+        }
+        
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: rgba(227, 242, 253, 0.8);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9) 0%, rgba(30, 136, 229, 0.7) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--light);
+            text-align: center;
+            padding: 100px 0;
+            border-top: 1px solid rgba(30, 136, 229, 0.2);
+            border-bottom: 1px solid rgba(30, 136, 229, 0.2);
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: rgba(227, 242, 253, 0.9);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(30, 136, 229, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-gray) 100%);
+            color: var(--light);
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(30, 136, 229, 0.2);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            transition: var(--transition);
+            color: rgba(227, 242, 253, 0.7);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(30, 136, 229, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-column p {
+            color: rgba(227, 242, 253, 0.7);
+            margin-bottom: 15px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(30, 136, 229, 0.2);
+            color: rgba(227, 242, 253, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-light);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .process-line {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                border-top: 1px solid rgba(30, 136, 229, 0.2);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo"><i class="fas fa-anchor"></i> Sail<span>Web7</span></div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive web development solutions tailored to your business needs. From concept to launch, we're with you every step of the way.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Our comprehensive suite of services is designed to meet all your digital needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Custom Web Development</h3>
+                    </div>
+                    <div class="service-features">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Bespoke website design and development</li>
+                            <li><i class="fas fa-check"></i> Responsive design for all devices</li>
+                            <li><i class="fas fa-check"></i> Content Management System integration</li>
+                            <li><i class="fas fa-check"></i> Web application development</li>
+                            <li><i class="fas fa-check"></i> API development and integration</li>
+                            <li><i class="fas fa-check"></i> Database design and optimization</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-Commerce Solutions</h3>
+                    </div>
+                    <div class="service-features">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Custom online store development</li>
+                            <li><i class="fas fa-check"></i> Payment gateway integration</li>
+                            <li><i class="fas fa-check"></i> Inventory management systems</li>
+                            <li><i class="fas fa-check"></i> Customer account management</li>
+                            <li><i class="fas fa-check"></i> Multi-currency and language support</li>
+                            <li><i class="fas fa-check"></i> Order tracking and analytics</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Start Selling Online</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsive Web Design</h3>
+                    </div>
+                    <div class="service-features">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Mobile-first design approach</li>
+                            <li><i class="fas fa-check"></i> Cross-browser compatibility</li>
+                            <li><i class="fas fa-check"></i> Optimized for tablets and smartphones</li>
+                            <li><i class="fas fa-check"></i> Fast loading times</li>
+                            <li><i class="fas fa-check"></i> Intuitive navigation</li>
+                            <li><i class="fas fa-check"></i> Accessibility compliance</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Design My Site</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                    </div>
+                    <div class="service-features">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> On-page SEO optimization</li>
+                            <li><i class="fas fa-check"></i> Technical SEO audit and fixes</li>
+                            <li><i class="fas fa-check"></i> Keyword research and strategy</li>
+                            <li><i class="fas fa-check"></i> Content optimization</li>
+                            <li><i class="fas fa-check"></i> Local SEO implementation</li>
+                            <li><i class="fas fa-check"></i> Performance monitoring</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Boost My Rankings</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Web Maintenance & Support</h3>
+                    </div>
+                    <div class="service-features">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Regular security updates</li>
+                            <li><i class="fas fa-check"></i> Performance monitoring</li>
+                            <li><i class="fas fa-check"></i> Content updates and changes</li>
+                            <li><i class="fas fa-check"></i> Backup and recovery services</li>
+                            <li><i class="fas fa-check"></i> 24/7 technical support</li>
+                            <li><i class="fas fa-check"></i> Hosting management</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Get Support</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                    </div>
+                    <div class="service-features">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> User research and analysis</li>
+                            <li><i class="fas fa-check"></i> Wireframing and prototyping</li>
+                            <li><i class="fas fa-check"></i> Visual design and branding</li>
+                            <li><i class="fas fa-check"></i> User testing and feedback</li>
+                            <li><i class="fas fa-check"></i> Interaction design</li>
+                            <li><i class="fas fa-check"></i> Design system creation</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Design My Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>How we deliver exceptional results for every project</p>
+            </div>
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Discovery & Planning</h3>
+                        <p>We start by understanding your business, goals, and target audience to create a strategic plan.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Design & Development</h3>
+                        <p>Our team creates visually appealing designs and develops functional, responsive websites.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Testing & Launch</h3>
+                        <p>We thoroughly test your website across devices and browsers before the official launch.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Support & Maintenance</h3>
+                        <p>We provide ongoing support to ensure your website continues to perform optimally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose SailWeb7</h2>
+                <p>What sets us apart from other web development agencies</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative Solutions</h3>
+                    <p>We stay ahead of industry trends to deliver cutting-edge solutions that give you a competitive advantage.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Approach</h3>
+                    <p>We work closely with you throughout the process, ensuring your vision is realized exactly as imagined.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Our efficient processes and experienced team ensure your project is delivered on time, every time.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Ongoing Support</h3>
+                    <p>We provide comprehensive support and maintenance to keep your website running smoothly long after launch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a typical website project take?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary based on complexity, but a standard business website typically takes 4-6 weeks from start to finish. More complex projects like e-commerce sites or custom web applications may take 8-12 weeks.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide website hosting?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer reliable hosting solutions as part of our web maintenance packages. We can also help you set up hosting with a provider of your choice if you prefer.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you work with our existing design or website?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We can redesign and rebuild your existing website or work with your current design to improve functionality and performance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What technologies do you use?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use a variety of modern technologies including HTML5, CSS3, JavaScript, React, Node.js, PHP, and various CMS platforms like WordPress, depending on your project requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer training after the website is launched?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide comprehensive training to ensure you're comfortable managing your website's content. We also create detailed documentation for future reference.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's discuss your project and create a custom solution that meets your business goals and exceeds your expectations.</p>
+            <a href="contact.html" class="btn">Start Your Project Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SailWeb7</h3>
+                    <p>We are a leading web development agency dedicated to creating exceptional digital experiences that drive business growth.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">E-Commerce</a></li>
+                        <li><a href="services.html">UI/UX Design</a></li>
+                        <li><a href="services.html">SEO Optimization</a></li>
+                        <li><a href="services.html">Web Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Web Street, Digital City</p>
+                    <p><i class="fas fa-phone"></i> +254 700 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@sailweb7.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SailWeb7 Agency. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+            
+            // Change icon
+            const icon = this.querySelector('i');
+            if (navMenu.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const backToTop = document.getElementById('back-to-top');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+                backToTop.classList.add('show');
+            } else {
+                header.classList.remove('header-scrolled');
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navMenu = document.getElementById('nav-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (window.innerWidth <= 768 && 
+                !navMenu.contains(e.target) && 
+                !mobileMenu.contains(e.target) && 
+                navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+                mobileMenu.querySelector('i').classList.remove('fa-times');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
